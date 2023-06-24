@@ -20,6 +20,7 @@ body{
     display: flex;
   }
 .nav-title{
+    margin-right:30vw;
     font-size: 3rem;
 }
 .navbar ul{

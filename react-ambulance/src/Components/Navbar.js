@@ -7,12 +7,12 @@ function Navbar() {
   return (
     <nav className='navbar'>
     <img src={logo} alt="Logo" className="logo" /> 
-    <Link to='/' className='nav-title'>CareConnect</Link>
+    <Link to='/Home' className='nav-title'>CareConnect</Link>
     <ul className='nav-links'>
       <CustomLink to= "/Home">Home</CustomLink>
-      <CustomLink to= "/Login">User</CustomLink>
-      <CustomLink to= "/Login">Admin</CustomLink>
-      <CustomLink to= "/Login">Driver</CustomLink>
+      <CustomLink to= "/Ulogin">User</CustomLink>
+      <CustomLink to= "/Alogin">Admin</CustomLink>
+      <CustomLink to= "/Dlogin">Driver</CustomLink>
       <CustomLink to= "/Remote">Remote</CustomLink>
       <CustomLink to= "/About">About Us</CustomLink>
     </ul>
