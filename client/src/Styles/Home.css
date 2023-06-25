@@ -1,0 +1,31 @@
+section {
+  height: 300vh;
+  
+  
+}
+.homepage-container{
+  width:auto;
+  height: 150vh;
+  background-image: url('../Images/1551100.jpg');
+  background-size:cover;
+}
+.welcm-msg{
+  margin-left: 55vh;
+  text-align: center;
+  height: 30vh;
+  width: 90vh;
+}
+.welcm-head{
+  font-size: 45px;
+  color: black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.welcm-line{
+  font-size: 25px;
+}
+.welcm-btn{
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+  
