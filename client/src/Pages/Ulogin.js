@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/Ulogin.css';
 import { Link } from "react-router-dom"
+import axios from "axios"
 
 function Ulogin(){
   const [username, setUsername] = useState('');
@@ -14,10 +15,17 @@ function Ulogin(){
     setPassword(event.target.value);
   };
 
-  const handleLogin = (event) => {
+    function handleLogin(event) {
     event.preventDefault();
+    let data = {
+      name: username,
+      password: password
+    }
+    console.log(data)
     // Perform login logic here, e.g., send username and password to the server
-    console.log('Logging in...');
+    axios.put("http://localhost:3001/auth/login",data).then((response) => {
+      console.log(response.data);
+    })
   };
 
   return (

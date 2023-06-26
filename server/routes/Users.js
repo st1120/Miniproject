@@ -22,33 +22,38 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+router.put("/login", async (req, res) => {
   try {
-    let user = await userModel.findOne({ name: req.body.name });
+    let user = await userModel.findOne({ username: req.body.name });
+
     let flag = -1;
     if (req.body.name === "admin" && req.body.password === "admin") {
       res.status(200).json(user);
        flag=1;
     }
+    console.log(req.body);
     if (!user) {
       flag = 1;
       user = { name: "User not found" };
       res.status(200).json(user);
     }
-    if (flag == -1) {
+    if (flag === -1) {
+      
       let validPassword = await bcrypt.compare(
         req.body.password,
         user.password
       );
+      
       if (!validPassword) {
         user = { name: "Wrong password" };
         res.status(200).json(user);
         flag = 0;
       }
     }
-    if (flag == -1) res.status(200).json(user);
+    if (flag == -1) 
+      res.status(200).json(user);
   } catch (err) {
-    res.status(200).json("user doesn't exist");
+    console.log(err);
   }
 });
 
